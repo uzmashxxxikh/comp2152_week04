@@ -154,7 +154,7 @@ input("Roll the dice for the monster's health points (Press enter)")
 m_health_points = random.choice(diceOptions)
 print("Player rolled " + str(m_health_points) + " health points for the monster")
 
-# Lab04 Q5
+# Lab04 Q5 - Item 1
 print("!!You have found a loot!! look inside to find 2 items")
 input("Press enter to roll the dice for the loot")
 lootRoll = random.choice(1,len(loot_options) + 1)
@@ -163,12 +163,17 @@ belt.append(loot)
 print("Your belt: " + belt)
 
 
-# Lab04 Q6
+# Lab04 Q6 - Item 2
 print("!!You have found a loot!! look inside to find 2 items")
 input("Press enter to roll the dice for the loot")
 lootRoll = random.choice(1,len(loot_options) + 1)
 loot = loot_options[loorRoll - 1]
 belt.append(loot)
+print("Your belt: " + belt)
+
+# Lab04 Q7 - Sort the belt
+print("Your neatly sorted belt")
+belt.sort()
 print("Your belt: " + belt)
 
 input("Analyze the roll (Press enter)")
