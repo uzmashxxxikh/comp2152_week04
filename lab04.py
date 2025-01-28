@@ -61,7 +61,6 @@ def monster_attacks(m_combat_strength, health_points):
         print("The monster has reduced your health to " + str(health_points))
     return health_points
 
-
 # Game
 # Define The number of lives for the Hero and Monster
 numLives = 10  # number of player's lives remaining
@@ -80,6 +79,17 @@ for weapon in weapons:
 loot_options = ["Health Potion", "Poison Potion", "Secret Note", "Leather Boots", "Flimsy Gloves"]
 good_loot_options = ["Health Potion", "Leather Boots"]
 bad_loot_options = ["Poison Potion"]
+
+# Lab04 - Q 4
+belt = []
+
+# Lab04 - Q 1
+# Define the Monster Power
+monster_power = {
+    "Fire Magic": 2,
+    "Freezing Time": 4,
+    "Super Hearing": 6,
+}
 
 # Define the number of stars awarded to the Player
 num_stars = 0
@@ -144,12 +154,35 @@ input("Roll the dice for the monster's health points (Press enter)")
 m_health_points = random.choice(diceOptions)
 print("Player rolled " + str(m_health_points) + " health points for the monster")
 
+# Lab04 Q5
+print("!!You have found a loot!! look inside to find 2 items")
+input("Press enter to roll the dice for the loot")
+lootRoll = random.choice(1,len(loot_options) + 1)
+loot = loot_options[loorRoll - 1]
+belt.append(loot)
+print("Your belt: " + belt)
+
+
 input("Analyze the roll (Press enter)")
 # Compare Player vs Monster's strength
 print("--- You are matched in strength: " + str(combat_strength == m_combat_strength))
 
 # Check the Player's overall strength and health
 print("--- You have a strong player: " + str((combat_strength + health_points) >= 15))
+
+# lab04 Q2
+# Roll for the Monster's Power
+input("Roll the dice for the monster's power (Press enter)")
+power_roll = random.choice(["Fire Magic","Freezing Time","Super Hearing"])
+
+#lab04 Q3
+# Increase the Monster's Combat Strength based on the Power
+m_combat_strength = min(6, m_combat_strength + monster_power[power_roll])
+print("The monster's power is " + power_roll + " and their combat strength is " + str(m_combat_strength))
+
+
+# lab04 Q4
+
 
 # Loop while the monster and the player are alive. Call fight sequence functions
 print("You meet the monster. FIGHT!!")
