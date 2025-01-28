@@ -163,6 +163,14 @@ belt.append(loot)
 print("Your belt: " + belt)
 
 
+# Lab04 Q6
+print("!!You have found a loot!! look inside to find 2 items")
+input("Press enter to roll the dice for the loot")
+lootRoll = random.choice(1,len(loot_options) + 1)
+loot = loot_options[loorRoll - 1]
+belt.append(loot)
+print("Your belt: " + belt)
+
 input("Analyze the roll (Press enter)")
 # Compare Player vs Monster's strength
 print("--- You are matched in strength: " + str(combat_strength == m_combat_strength))
